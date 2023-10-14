@@ -1,5 +1,6 @@
 from random import randrange
 from copy import copy
+from termcolor import colored
 
 # declaring Computer and player symbols
 player, computer = "X", "O"
@@ -17,9 +18,18 @@ def print_board():
     j = 0
     for i in board:
         j += 1
-        print(f"[{i}]", end=" ")
-        # new line after every 3 boxes
-        if j % 3 == 0:
+
+        if i == player:
+            print(colored(f"[{i}]", "red"), end=" ")
+
+        elif i == computer:
+            print(colored(f"[{i}]", "blue"), end=" ")
+
+        else:
+            print(f"[{i}]", end=" ") 
+
+            # new line after every 3 boxes
+        if j % 3 == 0:        
             print()
 
 
@@ -108,7 +118,7 @@ while has_empty_space():
     # if player wins the game
     if win:
         print_board()
-        print('>> you won')
+        print(colored(">> you won", "green"))
         exit()
 
     # Making a move for computer if there is and empty space
@@ -118,10 +128,10 @@ while has_empty_space():
     # if computer wins the game
     if is_winner(computer, board):
         print_board()
-        print('>> you loose!!')
+        print(colored(">> you loose!!", "red"))
         exit()
 
 # there is no empty space for any move and no winner
 print_board()
-print(">> Game over....")
+print(colored(">> Game over....", "yellow"))
 
