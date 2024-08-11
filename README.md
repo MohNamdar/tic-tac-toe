@@ -11,7 +11,7 @@
 
 ## Screenshots
 ------------
-![Screenshot](https://github.com/MohNamdar//tic-tac-toe/blob/main//tic-tac-toe.jpg)
+![Screenshot](https://github.com/MohNamdar/tic-tac-toe/blob/main/tic-tac-toe.jpg)
 
 Install
 -------
